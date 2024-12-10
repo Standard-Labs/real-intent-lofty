@@ -13,7 +13,7 @@ COLUMN_MAPPINGS = {
     "city": "Mailing City",
     "state": "Mailing State",
     "zip_code": "Mailing Zip Code",
-    "insight": "Insight" # would have to manually denote this column as "Import as Note" in Lofty
+    "insight": "Insight" # would have to manually denote this column as "Import as Note" in Lofty,
 }
 
 def format_phone_number(phone_number):
@@ -49,6 +49,7 @@ def main():
             if 'Phone DNC Status' in df.columns:
                 df['Phone DNC Status'] = df['Phone DNC Status'].apply(lambda x: "DNC" if x else "") 
 
+            df["Source"] = "Real Intent"
 
             # Display the resulting dataframe
             st.write("Converted DataFrame:")
